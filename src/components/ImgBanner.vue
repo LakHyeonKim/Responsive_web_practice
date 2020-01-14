@@ -4,7 +4,7 @@
            aspect-ratio="1.7">
       <v-layout align-center justify-center row fill-height>
         <!-- <v-row v-resize="onResize" align="center" justify="center"> -->
-        <!-- style="font-size:10vw; 가로크기에서 10을 항상 나누어 주는 폰트 사이즈 지정 -->
+        <!-- style="font-size:10vw; 가로크기/100이미 되어있음 (vw)에서 10을 항상 곱해 주는 폰트 사이즈 지정 -->
         <v-flex text-xs-center>
           <span class="text-shadow font-weight-light" style="font-size:10vw; text-align:center">
             <slot name="text"/>
