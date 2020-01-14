@@ -6,10 +6,10 @@
           <v-flex sm4 text-sm-center>
             <b-nav-item href="#">Home</b-nav-item>
           </v-flex>
-          <v-flex sm4 text-sm-left>
+          <v-flex sm4 text-sm-center>
             <b-nav-item href="#">Post</b-nav-item>
           </v-flex>
-          <v-flex sm4 text-sm-left>
+          <v-flex sm4 text-sm-center>
             <b-nav-item href="#">Portfolio</b-nav-item>
           </v-flex>
         </v-layout>
