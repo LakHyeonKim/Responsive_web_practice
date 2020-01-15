@@ -4,8 +4,8 @@
       <NavigationBar v-if="visialbe"></NavigationBar>
       <NavigationBarMobile v-if="!visialbe"></NavigationBarMobile>
     </header>
-    <ImgBanner imgSrc="https://source.unsplash.com/5brvJbR1Pn8/1600x900">
-      <div style="line-height:1.2em;font-size:1.2em;" slot="text">
+    <ImgBanner imgSrc="http://getwallpapers.com/wallpaper/full/b/0/2/32320.jpg#.Xh6BW1I3Trk.link">
+      <div style="line-height:1.2em; font-size:1.2em; margin-left:30px;" slot="text">
         Portfolio
       </div>
     </ImgBanner>

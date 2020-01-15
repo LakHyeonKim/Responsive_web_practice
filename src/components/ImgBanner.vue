@@ -1,15 +1,17 @@
 <template>
   <div>
-    <v-img :src="imgSrc"
-           aspect-ratio="1.7">
+    <v-img :src="imgSrc" aspect-ratio="1.7">
       <v-layout align-center justify-center row fill-height>
         <!-- <v-row v-resize="onResize" align="center" justify="center"> -->
         <!-- style="font-size:10vw; 가로크기/100이미 되어있음 (vw)에서 10을 항상 곱해 주는 폰트 사이즈 지정 -->
         <v-flex text-xs-center>
-          <span class="text-shadow font-weight-light" style="font-size:10vw; text-align:center">
-            <slot name="text"/>
+          <span
+            class="text-style font-weight-light text-banner-font"
+            style="font-size:7vw"
+          >
+            <slot name="text" />
           </span>
-        </v-flex>  
+        </v-flex>
         <!-- 노가다 방법 -->
         <!-- <v-flex text-xs-center v-if="fontSize2">
           <span class="text-shadow display-1 font-weight-light" style="text-align:center">
@@ -38,7 +40,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'ImgBanner',
   data: () => ({
@@ -47,29 +48,29 @@ export default {
     fontSize4: false,
     fontSize5: false
   }),
-	props: {
-		imgSrc: {type: String},
-		text: {type: String}
-	},
-	methods: {
-    onResize() {
-      if(window.innerWidth < 576){
+  props: {
+    imgSrc: { type: String },
+    text: { type: String }
+  },
+  methods: {
+    onResize () {
+      if (window.innerWidth < 576) {
         this.fontSize2 = true
         this.fontSize3 = false
         this.fontSize4 = false
         this.fontSize5 = false
-      }else if(window.innerWidth >= 576 && window.innerWidth < 768){
+      } else if (window.innerWidth >= 576 && window.innerWidth < 768) {
         window.console.log(window.innerWidth)
         this.fontSize2 = false
         this.fontSize3 = true
         this.fontSize4 = false
         this.fontSize5 = false
-      }else if(window.innerWidth >= 768 && window.innerWidth < 992){
+      } else if (window.innerWidth >= 768 && window.innerWidth < 992) {
         this.fontSize2 = false
         this.fontSize3 = false
         this.fontSize4 = true
         this.fontSize5 = false
-      }else{
+      } else {
         this.fontSize2 = false
         this.fontSize3 = false
         this.fontSize4 = false
@@ -77,13 +78,21 @@ export default {
       }
     }
   },
-  mounted(){
+  mounted () {
     this.onResize()
   }
 }
 </script>
 <style>
-  .text-shadow {
-    text-shadow: 0 0 15px rgb(255,255,255);
-  }
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+.text-style{
+  text-shadow: 0 0 15px rgb(182, 148, 37);
+  color: aliceblue;
+  text-align: left;
+}
+.text-banner-font {
+  font-family: 'Bebas Neue', cursiv;
+  font-size: 36px;
+}
+
 </style>
