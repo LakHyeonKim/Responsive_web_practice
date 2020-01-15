@@ -15,8 +15,8 @@
       <v-layout my-5>
         <v-row v-resize="onResize" align="center" justify="center">
           <v-flex xs8 class="text-center text-sm-left">
-            <h2 class="headline mb-3">About Me</h2>
-            <p class="mr-4">
+            <h2 class="headline mb-3 text-aboutMe-font">About Me</h2>
+            <p class="mr-4 text-aboutMe-font">
               안녕하세요, SSAFY 참가자 여러분!<br />함께 프로젝트를 진행하게
               되어서 기쁩니다. Vue는 어렵지 않습니다. 차근차근 하나씩
               따라하다보면 어느새 멋진 블로그가 만들어져 있을겁니다! 모두 화이팅
@@ -24,7 +24,7 @@
             </p>
           </v-flex>
           <v-flex xs4 v-if="this.visialbe">
-            <v-img :src="getImgUrl('profile.png')" aspect-ratio="1.5" />
+            <v-img :src="getImgUrl('iron.jpg')" aspect-ratio="1.5" />
           </v-flex>
         </v-row>
       </v-layout>
@@ -94,3 +94,12 @@ export default {
   }
 }
 </script>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Sunflower:500&display=swap');
+
+.text-aboutMe-font {
+  font-family: 'Sunflower', sans-serif;
+}
+
+</style>
