@@ -4,8 +4,8 @@
       <NavigationBar v-if="visialbe"></NavigationBar>
       <NavigationBarMobile v-if="!visialbe"></NavigationBarMobile>
     </header>
-    <ImgBanner imgSrc="https://source.unsplash.com/5brvJbR1Pn8/1600x900">
-      <div style="line-height:1.2em;font-size:1.2em;" slot="text">
+    <ImgBanner imgSrc="http://getwallpapers.com/wallpaper/full/b/0/2/32320.jpg#.Xh6BW1I3Trk.link">
+      <div style="line-height:1.2em; font-size:1.2em; margin-left:45px;" slot="text">
         Portfolio
       </div>
     </ImgBanner>
@@ -14,7 +14,9 @@
       <v-layout>
         <v-row v-resize="onResize" align="center" justify="center">
           <v-flex xs12>
-            <PortfolioList :limits="6" :load-more="true"></PortfolioList>
+            <div class="post-center">
+              <PortfolioList :limits="6" :load-more="true"></PortfolioList>
+            </div>
           </v-flex>
         </v-row>
       </v-layout>
@@ -53,3 +55,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.post-center {
+  padding: 40px;
+  text-align: center;
+}
+</style>

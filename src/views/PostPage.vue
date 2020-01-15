@@ -4,15 +4,24 @@
       <NavigationBar v-if="visialbe"></NavigationBar>
       <NavigationBarMobile v-if="!visialbe"></NavigationBarMobile>
     </header>
-    <ImgBanner imgSrc="https://source.unsplash.com/5brvJbR1Pn8/1600x900">
-      <div style="line-height:1.2em;font-size:1.2em;" slot="text">Post</div>
+    <ImgBanner
+      imgSrc="https://imboldn.com/wp-content/uploads/2019/04/Avengers-endgame-2019-02-08.jpg"
+    >
+      <div
+        style="line-height:1.2em; font-size:1.2em; margin-left:45px"
+        slot="text"
+      >
+        Post
+      </div>
     </ImgBanner>
     <v-container>
       <!-- Post -->
       <v-layout>
         <v-row v-resize="onResize" align="center" justify="center">
           <v-flex xs12>
-            <PostList :limits="6" :load-more="true"></PostList>
+            <div class="post-center">
+              <PostList :limits="6" :load-more="true"></PostList>
+            </div>
           </v-flex>
         </v-row>
       </v-layout>
@@ -51,3 +60,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.post-center {
+  padding: 40px;
+  text-align: center;
+}
+</style>

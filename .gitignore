@@ -172,5 +172,6 @@ yarn-error.log
 
 ############
 .settings
+token.json
 
 # End of https://www.gitignore.io/api/vue,vuejs,python,firebase,visualstudiocode
