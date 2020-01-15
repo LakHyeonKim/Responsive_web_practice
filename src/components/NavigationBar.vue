@@ -4,13 +4,13 @@
       <b-navbar-nav>
         <v-layout row wrap>
           <v-flex sm4 text-sm-center>
-            <b-nav-item href="#">Home</b-nav-item>
+            <b-nav-item v-on:click="goHome()">Home</b-nav-item>
           </v-flex>
           <v-flex sm4 text-sm-center>
-            <b-nav-item href="#">Post</b-nav-item>
+            <b-nav-item v-on:click="goPost()">Post</b-nav-item>
           </v-flex>
           <v-flex sm4 text-sm-center>
-            <b-nav-item href="#">Portfolio</b-nav-item>
+            <b-nav-item v-on:click="goPortfolio()">Portfolio</b-nav-item>
           </v-flex>
         </v-layout>
       </b-navbar-nav>
@@ -20,6 +20,20 @@
 
 <script>
 export default {
-  data: () => ({})
+  name: 'NavigationBar',
+  data: () => ({
+
+  }),
+  methods:{
+    goHome(){
+      this.$router.push('/')
+    },
+    goPost(){
+      this.$router.push('/post')
+    },
+    goPortfolio(){
+      this.$router.push('/portfolio')
+    }
+  }
 }
 </script>
