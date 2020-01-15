@@ -8,7 +8,7 @@
       imgSrc="https://imboldn.com/wp-content/uploads/2019/04/Avengers-endgame-2019-02-08.jpg"
     >
       <div
-        style="line-height:1.2em; font-size:1.2em; margin-left:30px"
+        style="line-height:1.2em; font-size:1.2em; margin-left:45px"
         slot="text"
       >
         Post

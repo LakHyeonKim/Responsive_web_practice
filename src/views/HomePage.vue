@@ -5,7 +5,7 @@
       <NavigationBarMobile v-if="!visialbe"></NavigationBarMobile>
     </header>
     <ImgBanner imgSrc="https://c.wallhere.com/photos/a4/2d/1600x900_px_black_Iron_man-1428647.jpg!d">
-      <div style="line-height:1.2em; font-size:1.2em; margin-left:30px" slot="text">
+      <div style="line-height:1.2em; font-size:1.2em; margin-left:45px" slot="text">
         I'm Iron man.<br />
         I love you 3000.
       </div>
