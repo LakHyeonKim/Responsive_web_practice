@@ -15,8 +15,8 @@
       <v-layout my-5>
         <v-row v-resize="onResize" align="center" justify="center">
           <v-flex xs8 class="text-center text-sm-left">
-            <h2 class="headline mb-3 text-aboutMe-font">About Me</h2>
-            <p class="mr-4 text-aboutMe-font">
+            <h2 class="headline mb-3 text-font-style">About Me</h2>
+            <p class="mr-4 text-font-style">
               안녕하세요, SSAFY 참가자 여러분!<br />함께 프로젝트를 진행하게
               되어서 기쁩니다. Vue는 어렵지 않습니다. 차근차근 하나씩
               따라하다보면 어느새 멋진 블로그가 만들어져 있을겁니다! 모두 화이팅
@@ -32,23 +32,27 @@
       <!-- Portfolio -->
       <v-layout my-5>
         <v-flex xs12>
-          <h2 class="headline my-5 text-xs-center">Portfolio</h2>
-          <PortfolioList></PortfolioList>
+          <h2 class="headline my-5 text-xs-center text-font-style">Portfolio</h2>
+          <div class="post-center">
+            <PortfolioList></PortfolioList>
+          </div>
         </v-flex>
       </v-layout>
 
       <!-- Post -->
       <v-layout my-5>
         <v-flex xs12>
-          <h2 class="headline my-5 text-xs-center">Post</h2>
-          <PostList :column="2"></PostList>
+          <h2 class="headline my-5 text-xs-center text-font-style">Post</h2>
+          <div class="post-center">
+            <PostList></PostList>
+          </div>
         </v-flex>
       </v-layout>
 
       <!-- Github -->
       <v-layout my-5>
         <v-flex xs12>
-          <h2 class="headline my-5 text-xs-center">Project</h2>
+          <h2 class="headline my-5 text-xs-center text-font-style">Project</h2>
           <RepositoryList></RepositoryList>
         </v-flex>
       </v-layout>
@@ -98,8 +102,12 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Sunflower:500&display=swap');
 
-.text-aboutMe-font {
+.text-font-style{
   font-family: 'Sunflower', sans-serif;
+}
+.post-center{
+  padding: 40px;
+  text-align: center;
 }
 
 </style>

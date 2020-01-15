@@ -14,7 +14,9 @@
       <v-layout>
         <v-row v-resize="onResize" align="center" justify="center">
           <v-flex xs12>
-            <PortfolioList :limits="6" :load-more="true"></PortfolioList>
+            <div class="post-center">
+              <PortfolioList :limits="6" :load-more="true"></PortfolioList>
+            </div>
           </v-flex>
         </v-row>
       </v-layout>
@@ -53,3 +55,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.post-center {
+  padding: 40px;
+  text-align: center;
+}
+</style>
