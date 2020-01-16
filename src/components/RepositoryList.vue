@@ -11,31 +11,33 @@
 <script>
 import Repository from '@/components/Repository'
 import GitlabService from '@/services/GitlabService'
+import Token from '../token.json'
 
 export default {
 	name: 'RepositoryList',
 	props: {
-		limits: {type: Number, default: 5},
-		loadMore: {type: Boolean, default: false}
+		limits: {type: Number, default: 10},
+		loadMore: {type: Boolean, default: true}
 	},
 	data() {
 		return {
-			repositories: []
-    }
+			repositories: [],
+			token:Token.token
+    	}
 	},
 	components: {
 		Repository
 	},
 	mounted() {
-		this.getGitlabRepos('demo')
+		this.getGitlabRepos('rlafkrgus963',this.token)
 	},
 	methods: {
-		async getGitlabRepos(userName) {
-			const response = await GitlabService.getRepos(userName)
+		async getGitlabRepos(userName,token) {
+			const response = await GitlabService.getRepos(userName,token)
 			if(response.status !== 200) {
 				return
 			}
-
+			window.console.log(response);
 			this.repositories = response.data
 		}
 	}
