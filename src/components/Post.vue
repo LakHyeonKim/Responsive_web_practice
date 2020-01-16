@@ -2,8 +2,8 @@
   <v-card>
     <v-card-title primary-title>
       <div>
-        <div class="headline">{{title}}</div>
-        <span class="grey--text">{{body}}</span>
+        <div class="headline line-clamp-title">{{title}}</div>
+        <span class="grey--text line-clamp-body">{{body}}</span>
       </div>
     </v-card-title>
     <v-card-text>
@@ -37,5 +37,17 @@ export default {
 }
 .h-100 {
   height: 100%;
+}
+.line-clamp-title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.line-clamp-body {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 </style>
