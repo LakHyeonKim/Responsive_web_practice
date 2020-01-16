@@ -21,6 +21,7 @@
         </v-row>
       </v-layout>
     </v-container>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -29,6 +30,7 @@ import ImgBanner from '../components/ImgBanner'
 import PortfolioList from '../components/PortfolioList'
 import NavigationBar from '../components/NavigationBar'
 import NavigationBarMobile from '../components/NavigationBarMobile'
+import Footer from '../components/Footer'
 
 export default {
   name: 'PortfolioPage',
@@ -39,7 +41,8 @@ export default {
     ImgBanner,
     PortfolioList,
     NavigationBar,
-    NavigationBarMobile
+    NavigationBarMobile,
+    Footer
   },
   methods: {
     onResize () {
