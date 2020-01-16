@@ -26,6 +26,7 @@
         </v-row>
       </v-layout>
     </v-container>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -34,6 +35,7 @@ import ImgBanner from '../components/ImgBanner'
 import PostList from '../components/PostList'
 import NavigationBar from '../components/NavigationBar'
 import NavigationBarMobile from '../components/NavigationBarMobile'
+import Footer from '../components/Footer'
 
 export default {
   name: 'PostPage',
@@ -44,7 +46,8 @@ export default {
     ImgBanner,
     PostList,
     NavigationBar,
-    NavigationBarMobile
+    NavigationBarMobile,
+    Footer
   },
   methods: {
     onResize () {

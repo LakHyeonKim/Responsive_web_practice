@@ -12,10 +12,10 @@
     </ImgBanner>
     <v-container>
       <!-- About Me -->
-      <v-layout my-5>
-        <v-row v-resize="onResize" align="center" justify="center">
+      <v-layout my-5 class="post-center">
+        <v-row v-resize="onResize" align="center" >
           <v-flex xs8 class="text-center text-sm-left">
-            <h2 class="headline mb-3 text-font-style">About Me</h2>
+            <p class="text-banner-font post-center">About Me</p>
             <p class="mr-4 text-font-style">
               안녕하세요, SSAFY 참가자 여러분!<br />함께 프로젝트를 진행하게
               되어서 기쁩니다. Vue는 어렵지 않습니다. 차근차근 하나씩
@@ -23,40 +23,50 @@
               하시고, 꼭 완성해서 좋은 평가 있길 바라겠습니다.
             </p>
           </v-flex>
-          <v-flex xs4 v-if="this.visialbe">
-            <v-img :src="getImgUrl('iron.jpg')" aspect-ratio="1.5" />
+          <v-flex xs4 v-if="this.visialbe && (this.scrollY <= 600)">
+            <v-img :src="getImgUrl('iron-close-heart.jpg')" aspect-ratio="1.3" width="300"/>
+          </v-flex>
+          <v-flex xs4 v-if="this.visialbe && (this.scrollY > 600 && this.scrollY <= 750)">
+            <v-img :src="getImgUrl('iron-close-eyes.jpg')" aspect-ratio="1.3" width="300"/>
+          </v-flex>
+          <v-flex xs4 v-if="this.visialbe && (this.scrollY > 750)">
+            <v-img :src="getImgUrl('iron.jpg')" aspect-ratio="1.3" width="300"/>
           </v-flex>
         </v-row>
       </v-layout>
-
+      <br><v-divider></v-divider>
       <!-- Portfolio -->
       <v-layout my-5>
         <v-flex xs12>
-          <h2 class="headline my-5 text-xs-center text-font-style">Portfolio</h2>
-          <div class="post-center">
+          <div class="text-left" v-if="visialbe"><p class="text-banner-font">Portfolio</p></div>
+          <div class="text-center" v-if="!visialbe"><p class="text-banner-font">Portfolio</p></div>
+          <div>
             <PortfolioList></PortfolioList>
           </div>
         </v-flex>
       </v-layout>
-
+      <br><v-divider></v-divider>
       <!-- Post -->
       <v-layout my-5>
         <v-flex xs12>
-          <h2 class="headline my-5 text-xs-center text-font-style">Post</h2>
-          <div class="post-center">
+          <div class="text-left" v-if="visialbe"><p class="text-banner-font">Post</p></div>
+          <div class="text-center" v-if="!visialbe"><p class="text-banner-font">Post</p></div>
+          <div>
             <PostList></PostList>
           </div>
         </v-flex>
       </v-layout>
-
+      <br><v-divider></v-divider>
       <!-- Github -->
       <v-layout my-5>
         <v-flex xs12>
-          <h2 class="headline my-5 text-xs-center text-font-style">Project</h2>
-          <RepositoryList></RepositoryList>
+          <div class="text-left" v-if="visialbe"><p class="text-banner-font">Repository</p></div>
+          <div class="text-center" v-if="!visialbe"><p class="text-banner-font">Repository</p></div>
+          <div><RepositoryList></RepositoryList></div>
         </v-flex>
       </v-layout>
     </v-container>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -67,11 +77,14 @@ import PostList from '../components/PostList'
 import RepositoryList from '../components/RepositoryList'
 import NavigationBar from '../components/NavigationBar'
 import NavigationBarMobile from '../components/NavigationBarMobile'
+import Footer from '../components/Footer'
 
 export default {
   name: 'HomePage',
   data: () => ({
-    visialbe: false
+    visialbe: false,
+    scrollY: 0,
+    timer: null
   }),
   components: {
     ImgBanner,
@@ -79,7 +92,8 @@ export default {
     PostList,
     RepositoryList,
     NavigationBar,
-    NavigationBarMobile
+    NavigationBarMobile,
+    Footer
   },
   methods: {
     getImgUrl (img) {
@@ -91,7 +105,23 @@ export default {
       } else {
         this.visialbe = true
       }
+    },
+    handleScroll(){
+      if(this.timer === null){
+        this.timer = setTimeout(function(){
+          this.scrollY = window.scrollY
+          window.console.log(this.scrollY)
+          clearTimeout(this.timer)
+          this.timer =null
+        }.bind(this), 200)
+      }
     }
+  },
+  created(){
+    window.addEventListener('scroll',this.handleScroll)
+  },
+  beforeDestroy(){
+    window.removeEventListener('scroll', this.handleScroll)
   },
   mounted () {
     this.onResize()
@@ -101,13 +131,18 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Sunflower:500&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
 .text-font-style{
   font-family: 'Sunflower', sans-serif;
 }
 .post-center{
   padding: 40px;
   text-align: center;
+}
+
+.text-banner-font {
+  font-family: 'Bebas Neue', cursiv;
+  font-size: 36px;
 }
 
 </style>
