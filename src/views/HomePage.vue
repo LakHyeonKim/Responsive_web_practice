@@ -13,7 +13,7 @@
     <v-container>
       <!-- About Me -->
       <v-layout my-5 class="post-center">
-        <v-row v-resize="onResize" align="center" >
+        <v-row v-resize="onResize" align="center" justify="center">
           <v-flex xs8 class="text-center text-sm-left">
             <p class="text-banner-font post-center">About Me</p>
             <p class="mr-4 text-font-style">
