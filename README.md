@@ -3,10 +3,10 @@
 </div>
 
 # 목차
-* [Overview](#Overview)
-* [Before You Begin & Prerequisites](#Before You Begin & Prerequisites)
-* [Setup](#Setup)
-* [Project URL](#Project URL)
+1. [Overview](#overview)
+2. [Before You Begin & Prerequisites](#before-you-begin-&-prerequisites)
+3. [Setup](#setup)
+4. [Project URL](#project-url)
 
 
 # Overview
